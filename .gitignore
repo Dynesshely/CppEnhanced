@@ -12,3 +12,4 @@ _deps
 
 ## Custom Part
 .idea/
+cmake-build-debug/
