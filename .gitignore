@@ -1,4 +1,4 @@
-CMakeLists.txt.user
+﻿CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
@@ -13,3 +13,6 @@ _deps
 ## Custom Part
 .idea/
 cmake-build-debug/
+
+.vs/
+out/

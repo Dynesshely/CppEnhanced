@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by Dynesshely on 2023.02.05.
 //
 
@@ -37,7 +37,7 @@ namespace CppEnhanced::Classes {
         ShortLocalDateTimeWithDay = 20,   //  2 月 5 日 19 时 32 分 星期日
     };
 
-    class DateTime {
+    class __declspec(dllexport) DateTime {
     private:
         // Number of 100ns ticks per time unit
         const long TicksPerMillisecond = 10000;
@@ -79,13 +79,13 @@ namespace CppEnhanced::Classes {
         const int DaysTo1899 = DaysPer400Years * 4 + DaysPer100Years * 3 - 367;
         // Number of days from 1/1/0001 to 12/31/1969
         const int DaysTo1970 = DaysPer400Years * 4 + DaysPer100Years * 3
-                               + DaysPer4Years * 17 + DaysPerYear; // 719,162
+            + DaysPer4Years * 17 + DaysPerYear; // 719,162
         // Number of days from 1/1/0001 to 12/31/9999
         const int DaysTo10000 = DaysPer400Years * 25 - 366;  // 3652059
 
         const long MinTicks = 0;
         const long MaxTicks = DaysTo10000 * TicksPerDay - 1;
-        const long MaxMillis = (long) DaysTo10000 * MillisPerDay;
+        const long MaxMillis = (long)DaysTo10000 * MillisPerDay;
 
         const long FileTimeOffset = DaysTo1601 * TicksPerDay;
         const long DoubleDateOffset = DaysTo1899 * TicksPerDay;
