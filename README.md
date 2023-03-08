@@ -1,22 +1,27 @@
-# CppEnhanced
+# About CppEnhanced
 
-Your full power tool for C++ development.
-There is a set of powerful tools and classes.
+Your powerful tool for C++ development.
 
-Whole project is using CMake, you can easily import this lib through CMake
-In future, you will be able to import CppEnhanced from vcpkg.
+Whole project use CMake, you can easily import CppEnhanced through CMake.
+In future, you will be able to import CppEnhanced from vcpkg and other package manager.
 
 # Build
-How to build CppEnhanced?
-we need CMake and a C++ compiler
-## On Linux,Unix,Cygwin,MacOS or other unix-like OS
+
+## On Linux, Unix, Cygwin, MacOS or other unix-like OS
+
+Prepare CMake, C++ compiler and other tool chain first.
+
 ```shell
 mkdir build
 cd build
 cmake ..
 make
 ```
-## On Windows(build MSVC)
+
+## On Windows (build with MSVC)
+
+Make sure CMake and MSVC environment installed.
+
 ```shell
 mkdir build
 cd build
@@ -24,9 +29,18 @@ cmake ..
 msbuild
 ```
 
-# DateTime
+# Components
 
-DateTime is a C++ time format and operate library
+- DateTime
+  DateTime is a C++ time format and operate library
 
-# Licence
-AGPL-3.0 license
+# Usage
+
+building ...
+
+# License
+
+We are using AGPLv3.0 now.
+
+
+
