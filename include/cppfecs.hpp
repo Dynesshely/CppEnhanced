@@ -1,6 +1,6 @@
-#ifndef _INC_STDCPP_FECS_HPP_
+﻿#ifndef _INC_STDCPP_FECS_HPP_
 #define _INC_STDCPP_FECS_HPP_
-#include "libplatfrom.h"
+#include "libplatform.h"
 
 #ifndef __has_include
 #   define __has_include(x) 1
