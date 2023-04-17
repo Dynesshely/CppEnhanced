@@ -10,60 +10,74 @@ namespace CppEnhanced {
 
     std::ostringstream _pub_osstream;
 
-    void DateTime::SetYear(int year) noexcept {
-        Year = year;
+    DateTime DateTime::SetYear(int year) noexcept {
+        this->Year = year;
+        return *this;
     }
 
-    void DateTime::SetMonth(int month) noexcept {
-        Month = month;
+    DateTime DateTime::SetMonth(int month) noexcept {
+        this->Month = month;
+        return *this;
     }
 
-    void DateTime::SetDay(int day) noexcept {
-        Day = day;
+    DateTime DateTime::SetDay(int day) noexcept {
+        this->Day = day;
+        return *this;
     }
 
-    void DateTime::SetHours(int hours) noexcept {
-        Hours = hours;
+    DateTime DateTime::SetHours(int hours) noexcept {
+        this->Hours = hours;
+        return *this;
     }
 
-    void DateTime::SetMinutes(int minutes) noexcept {
-        Minutes = minutes;
+    DateTime DateTime::SetMinutes(int minutes) noexcept {
+        this->Minutes = minutes;
+        return *this;
     }
 
-    void DateTime::SetSeconds(int seconds) noexcept {
-        Seconds = seconds;
+    DateTime DateTime::SetSeconds(int seconds) noexcept {
+        this->Seconds = seconds;
+        return *this;
     }
 
-    void DateTime::SetMilliseconds(int milliseconds) noexcept {
-        Milliseconds = milliseconds;
+    DateTime DateTime::SetMilliseconds(int milliseconds) noexcept {
+        this->Milliseconds = milliseconds;
+        return *this;
     }
 
-    void DateTime::AddYear(int year) noexcept {
-        Year += year;
+    DateTime DateTime::AddYear(int year) noexcept {
+        this->Year += year;
+        return *this;
     }
 
-    void DateTime::AddMonth(int month) noexcept {
-        Month += month;
+    DateTime DateTime::AddMonth(int month) noexcept {
+        this->Month += month;
+        return *this;
     }
 
-    void DateTime::AddDay(int day) noexcept {
-        Day += day;
+    DateTime DateTime::AddDay(int day) noexcept {
+        this->Day += day;
+        return *this;
     }
 
-    void DateTime::AddHours(int hours) noexcept {
-        Hours += hours;
+    DateTime DateTime::AddHours(int hours) noexcept {
+        this->Hours += hours;
+        return *this;
     }
 
-    void DateTime::AddMinutes(int minutes) noexcept {
-        Minutes += minutes;
+    DateTime DateTime::AddMinutes(int minutes) noexcept {
+        this->Minutes += minutes;
+        return *this;
     }
 
-    void DateTime::AddSeconds(int seconds) noexcept {
-        Seconds += seconds;
+    DateTime DateTime::AddSeconds(int seconds) noexcept {
+        this->Seconds += seconds;
+        return *this;
     }
 
-    void DateTime::AddMilliseconds(int milliseconds) noexcept {
-        Milliseconds += milliseconds;
+    DateTime DateTime::AddMilliseconds(int milliseconds) noexcept {
+        this->Milliseconds += milliseconds;
+        return *this;
     }
 
     int DateTime::GetYear() const noexcept {
@@ -94,14 +108,14 @@ namespace CppEnhanced {
         return Milliseconds;
     }
 
-    std::string DateTime::ToString(int type, char d = '.', char t = ':') const {
+    std::string DateTime::ToString(int type, char d, char t) const {
 
         _pub_osstream.clear();
 
         switch (type) {
 
             case 0:
-                return "";
+                break;
 
             case 1:
                 _pub_osstream << Year << d << Month << d << Day;

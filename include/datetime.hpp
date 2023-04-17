@@ -124,33 +124,33 @@ namespace CppEnhanced {
         void MonthOverflow() noexcept;
 
     public:
-        void SetYear(int year) noexcept;
+        DateTime SetYear(int year) noexcept;
 
-        void SetMonth(int month) noexcept;
+        DateTime SetMonth(int month) noexcept;
 
-        void SetDay(int day) noexcept;
+        DateTime SetDay(int day) noexcept;
 
-        void SetHours(int hours) noexcept;
+        DateTime SetHours(int hours) noexcept;
 
-        void SetMinutes(int minutes) noexcept;
+        DateTime SetMinutes(int minutes) noexcept;
 
-        void SetSeconds(int seconds) noexcept;
+        DateTime SetSeconds(int seconds) noexcept;
 
-        void SetMilliseconds(int milliseconds) noexcept;
+        DateTime SetMilliseconds(int milliseconds) noexcept;
 
-        void AddYear(int year) noexcept;
+        DateTime AddYear(int year) noexcept;
 
-        void AddMonth(int month) noexcept;
+        DateTime AddMonth(int month) noexcept;
 
-        void AddDay(int day) noexcept;
+        DateTime AddDay(int day) noexcept;
 
-        void AddHours(int hours) noexcept;
+        DateTime AddHours(int hours) noexcept;
 
-        void AddMinutes(int minutes) noexcept;
+        DateTime AddMinutes(int minutes) noexcept;
 
-        void AddSeconds(int seconds) noexcept;
+        DateTime AddSeconds(int seconds) noexcept;
 
-        void AddMilliseconds(int milliseconds) noexcept;
+        DateTime AddMilliseconds(int milliseconds) noexcept;
 
         int GetYear() const noexcept;
 
@@ -166,7 +166,7 @@ namespace CppEnhanced {
 
         int GetMilliseconds() const noexcept;
 
-        std::string ToString(int type, char d, char t) const;
+        std::string ToString(int type, char d = '.', char t = ':') const;
 
         std::string ToString(std::string format) const;
 
