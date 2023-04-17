@@ -1,4 +1,7 @@
 ﻿
+## Ignore custom items
+out/
+
 ## Ignore items manually
 ALL_BUILD.vcxproj
 ALL_BUILD.vcxproj.filters
