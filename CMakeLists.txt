@@ -18,3 +18,5 @@ include_directories(
 )
 
 add_library(CppEnhanced SHARED ${SOURCE_FILES})
+
+add_subdirectory(tests)
