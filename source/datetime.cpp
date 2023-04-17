@@ -1,172 +1,199 @@
-//
-// Created by Dynesshely on 2023.02.05.
-// Changed by ChenPi11 on 2023.03.05.
+﻿//
+// Created by Dynesshely on 2023.02.05
+// Changed by ChenPi11 on 2023.03.05
+// Changed by Dynesshely on 2023.04.17
 //
 
 #include <datetime.hpp>
 
-namespace CppEnhanced
-{
-    namespace Classes
-    {
-        std::ostringstream _pub_osstream;
+namespace CppEnhanced {
 
-        void DateTime::SetYear(int year) noexcept {
-            Year = year;
+    std::ostringstream _pub_osstream;
+
+    void DateTime::SetYear(int year) noexcept {
+        Year = year;
+    }
+
+    void DateTime::SetMonth(int month) noexcept {
+        Month = month;
+    }
+
+    void DateTime::SetDay(int day) noexcept {
+        Day = day;
+    }
+
+    void DateTime::SetHours(int hours) noexcept {
+        Hours = hours;
+    }
+
+    void DateTime::SetMinutes(int minutes) noexcept {
+        Minutes = minutes;
+    }
+
+    void DateTime::SetSeconds(int seconds) noexcept {
+        Seconds = seconds;
+    }
+
+    void DateTime::SetMilliseconds(int milliseconds) noexcept {
+        Milliseconds = milliseconds;
+    }
+
+    void DateTime::AddYear(int year) noexcept {
+        Year += year;
+    }
+
+    void DateTime::AddMonth(int month) noexcept {
+        Month += month;
+    }
+
+    void DateTime::AddDay(int day) noexcept {
+        Day += day;
+    }
+
+    void DateTime::AddHours(int hours) noexcept {
+        Hours += hours;
+    }
+
+    void DateTime::AddMinutes(int minutes) noexcept {
+        Minutes += minutes;
+    }
+
+    void DateTime::AddSeconds(int seconds) noexcept {
+        Seconds += seconds;
+    }
+
+    void DateTime::AddMilliseconds(int milliseconds) noexcept {
+        Milliseconds += milliseconds;
+    }
+
+    int DateTime::GetYear() const noexcept {
+        return Year;
+    }
+
+    int DateTime::GetMonth() const noexcept {
+        return Month;
+    }
+
+    int DateTime::GetDay() const noexcept {
+        return Day;
+    }
+
+    int DateTime::GetHours() const noexcept {
+        return Hours;
+    }
+
+    int DateTime::GetMinutes() const noexcept {
+        return Minutes;
+    }
+
+    int DateTime::GetSeconds() const noexcept {
+        return Seconds;
+    }
+
+    int DateTime::GetMilliseconds() const noexcept {
+        return Milliseconds;
+    }
+
+    std::string DateTime::ToString(int type, char d = '.', char t = ':') const {
+
+        _pub_osstream.clear();
+
+        switch (type) {
+
+            case 0:
+                return "";
+
+            case 1:
+                _pub_osstream << Year << d << Month << d << Day;
+                break;
+
+            case 2:
+                _pub_osstream << Month << d << Day;
+                break;
         }
 
-        void DateTime::SetMonth(int month) noexcept {
-            Month = month;
-        }
+        return _pub_osstream.str();
+    }
 
-        void DateTime::SetDay(int day) noexcept {
-            Day = day;
-        }
+    std::string DateTime::ToString(std::string format) const {
 
-        void DateTime::SetHours(int hours) noexcept {
-            Hours = hours;
-        }
+        // Todo: to string
 
-        void DateTime::SetMinutes(int minutes) noexcept {
-            Minutes = minutes;
-        }
+        return std::string("");
+    }
 
-        void DateTime::SetSeconds(int seconds) noexcept {
-            Seconds = seconds;
-        }
+    std::wstring DateTime::ToString(std::wstring format) const {
 
-        void DateTime::SetMilliseconds(int milliseconds) noexcept {
-            Milliseconds = milliseconds;
-        }
+        // Todo: to wstring
 
-        void DateTime::AddYear(int year) noexcept {
-            Year += year;
-        }
+        return L"";
+    }
 
-        void DateTime::AddMonth(int month) noexcept {
-            Month += month;
-        }
+    bool DateTime::Validate() noexcept {
 
-        void DateTime::AddDay(int day) noexcept {
-            Day += day;
-        }
+        Normalize();
 
-        void DateTime::AddHours(int hours) noexcept {
-            Hours += hours;
-        }
+        // Todo: 校验时间是否合法
 
-        void DateTime::AddMinutes(int minutes) noexcept {
-            Minutes += minutes;
-        }
+        return true;
+    }
 
-        void DateTime::AddSeconds(int seconds) noexcept {
-            Seconds += seconds;
-        }
+    void DateTime::Normalize() noexcept {
 
-        void DateTime::AddMilliseconds(int milliseconds) noexcept {
-            Milliseconds += milliseconds;
-        }
+        MillisecondsOverflow();
 
-        int DateTime::GetYear() const noexcept {
-            return Year;
-        }
+        SecondsOverflow();
 
-        int DateTime::GetMonth() const noexcept {
-            return Month;
-        }
+        MinutesOverflow();
 
-        int DateTime::GetDay() const noexcept {
-            return Day;
-        }
+        HoursOverflow();
 
-        int DateTime::GetHours() const noexcept {
-            return Hours;
-        }
+        MonthOverflow();
+    }
 
-        int DateTime::GetMinutes() const noexcept {
-            return Minutes;
-        }
+    void DateTime::MillisecondsOverflow() noexcept {
 
-        int DateTime::GetSeconds() const noexcept {
-            return Seconds;
-        }
+        auto secIncrease = Milliseconds % MillisPerSecond;
 
-        int DateTime::GetMilliseconds() const noexcept {
-            return Milliseconds;
-        }
+        Seconds += secIncrease;
 
-        std::string DateTime::ToString(int type, char d = '.', char t = ':') const {
-            _pub_osstream.clear();
-            switch (type) {
-                case 0:
-                    return "";
-                case 1:
-                    _pub_osstream << Year << d << Month << d << Day;
-                    return _pub_osstream.str();
-                case 2:
-                    _pub_osstream << Month << d << Day;
-                    break;
-                default:
-                    return "";
-            }
-            return "";//avoid gcc -Wreturn-type warning
-        }
-#warning DateTime::ToString(std::string format) unrealized
-        std::string DateTime::ToString(std::string format) {
-            return std::string("");
-        }
-#warning DateTime::ToString(std::wstring format) unrealized
-        std::wstring DateTime::ToString(std::wstring format)
-        {
-            //TODO:to wstring
-            return L"";
-        }
-#warning DateTime::Validate() unrealized
-        bool DateTime::Validate() {
-            Normalize();
+        Milliseconds -= MillisPerSecond * secIncrease;
+    }
 
-            //TODO: 校验时间是否合法
+    void DateTime::SecondsOverflow() noexcept {
 
-            return true;
-        }
+        auto minIncrease = Seconds % SecondsPerMinute;
 
-        void DateTime::Normalize() noexcept {
-            MillisecondsOverflow();
-            SecondsOverflow();
-            MinutesOverflow();
-            HoursOverflow();
+        Minutes += minIncrease;
 
-            MonthOverflow();
-        }
+        Seconds -= SecondsPerMinute * minIncrease;
+    }
 
-        void DateTime::MillisecondsOverflow() noexcept {
-            auto secIncrease = Milliseconds % MillisPerSecond;
-            Seconds += secIncrease;
-            Milliseconds -= MillisPerSecond * secIncrease;
-        }
+    void DateTime::MinutesOverflow() noexcept {
 
-        void DateTime::SecondsOverflow() noexcept {
-            auto minIncrease = Seconds % SecondsPerMinute;
-            Minutes += minIncrease;
-            Seconds -= SecondsPerMinute * minIncrease;
-        }
+        auto hourIncrease = Minutes % MinutesPerHour;
 
-        void DateTime::MinutesOverflow() noexcept {
-            auto hourIncrease = Minutes % MinutesPerHour;
-            Hours += hourIncrease;
-            Minutes -= MinutesPerHour * hourIncrease;
-        }
+        Hours += hourIncrease;
 
-        void DateTime::HoursOverflow() noexcept {
-            auto dayIncrease = Hours % HoursPerDay;
-            Day += dayIncrease;
-            Hours -= HoursPerDay * dayIncrease;
-        }
+        Minutes -= MinutesPerHour * hourIncrease;
+    }
 
-        void DateTime::MonthOverflow() noexcept {
-            auto yearIncrease = Month % MonthsPerYear;
-            Year += yearIncrease;
-            Month -= MonthsPerYear * yearIncrease;
-        }
-    } // Classes
+    void DateTime::HoursOverflow() noexcept {
+
+        auto dayIncrease = Hours % HoursPerDay;
+
+        Day += dayIncrease;
+
+        Hours -= HoursPerDay * dayIncrease;
+    }
+
+    void DateTime::MonthOverflow() noexcept {
+
+        auto yearIncrease = Month % MonthsPerYear;
+
+        Year += yearIncrease;
+
+        Month -= MonthsPerYear * yearIncrease;
+    }
+
 }
