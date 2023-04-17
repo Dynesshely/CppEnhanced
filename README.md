@@ -1,4 +1,4 @@
-# About CppEnhanced
+﻿# About CppEnhanced
 
 Your powerful tool for C++ development.
 
@@ -61,7 +61,19 @@ reg.exe query "HKLM\SOFTWARE\Microsoft\MSBuild\ToolsVersions\4.0" /v MSBuildTool
 
 # Usage
 
-building ...
+All components supports chaining methods style.
+
+Take `DateTime` class for example:
+
+```cpp
+auto date = CppEnhanced::DateTime()
+    .SetYear(2023)
+    .SetMonth(1)
+    .SetDay(4)
+    ;
+printf("%s\n", date.ToString(1).c_str());
+// Output: 2023.1.4
+```
 
 # License
 
