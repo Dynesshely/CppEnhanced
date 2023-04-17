@@ -1,4 +1,10 @@
-﻿CMakeLists.txt.user
+﻿## General ignore items
+*.so
+*.dll
+*.exe
+
+## Ignore items for CMake 
+CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
@@ -10,11 +16,12 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
-## Custom Part
+## Ignore items for CLion
 .idea/
 cmake-build-debug/
 
+## Ignore items for Visual Studio
 .vs/
 out/
-##build dir
+# build dir
 build/
