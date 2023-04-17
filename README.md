@@ -1,4 +1,4 @@
-﻿# About CppEnhanced
+# About CppEnhanced
 
 Your powerful tool for C++ development.
 
@@ -81,26 +81,7 @@ We are using AGPLv3.0 now.
 
 # More
 
-## Add `Developer PowerShell for VS` profile to VSCode terminals
+- [In Wiki] [Add `Developer PowerShell for VS` profile to VSCode terminals](https://github.com/Dynesshely/CppEnhanced/wiki/Add-%60Developer-PowerShell-for-VS%60-info-your-VSCode)
 
-Take VS 2022 for example, you can add following profile to your VSCode settings.json:
 
-```json
-"terminal.integrated.profiles.windows": {
-    "Developer PowerShell for VS 2022": {
-        "source": "PowerShell",
-        "icon": "terminal-powershell",
-        // "path": "powershell.exe",
-        "args": [
-            "-NoExit",
-            "-Command",
-            "&{Import-Module 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll'; Enter-VsDevShell dabb02a8 -SkipAutomaticLocation -DevCmdArguments '-arch=x64 -host_arch=x64'}"
-        ]
-    }
-}
-```
-
-You should change path of Visual Studio to your installation path.
-
-Just replace 2022 to 2019 can change to VS 2019.
 
