@@ -1,4 +1,4 @@
-﻿#ifndef CPPENHANCED_DATETIME_H
+#ifndef CPPENHANCED_DATETIME_H
 #define CPPENHANCED_DATETIME_H
 
 #include <string>

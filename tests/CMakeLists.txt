@@ -1,4 +1,4 @@
-﻿
+
 set(TEST_SOURCES
     test_datetime.cpp
 )

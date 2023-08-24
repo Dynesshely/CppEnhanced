@@ -1,4 +1,4 @@
-﻿#ifndef _INC_STDCPP_FECS_HPP_
+#ifndef _INC_STDCPP_FECS_HPP_
 #define _INC_STDCPP_FECS_HPP_
 #include "libplatform.h"
 
