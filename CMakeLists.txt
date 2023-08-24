@@ -8,7 +8,6 @@ file(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/public
 )
 
 add_library(CppEnhanced SHARED ${SOURCE_FILES})
