@@ -1,10 +1,4 @@
-﻿//
-// Created by Dynesshely on 2023.02.05
-// Changed by ChenPi11 on 2023.03.05
-// Changed by Dynesshely on 2023.04.17
-//
-
-#include <datetime.hpp>
+﻿#include <datetime.hpp>
 
 namespace CppEnhanced {
 
