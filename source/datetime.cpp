@@ -123,14 +123,14 @@ namespace CppEnhanced {
         return _pub_osstream.str();
     }
 
-    std::string DateTime::ToString(std::string format) const {
+    std::string DateTime::ToString(const std::string& format) const {
 
         // Todo: to string
 
         return std::string("");
     }
 
-    std::wstring DateTime::ToString(std::wstring format) const {
+    std::wstring DateTime::ToString(const std::wstring& format) const {
 
         // Todo: to wstring
 

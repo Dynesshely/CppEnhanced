@@ -162,9 +162,9 @@ namespace CppEnhanced {
 
         std::string ToString(int type, char d = '.', char t = ':') const;
 
-        std::string ToString(std::string format) const;
+        std::string ToString(const std::string& format) const;
 
-        std::wstring ToString(std::wstring format) const;
+        std::wstring ToString(const std::wstring& format) const;
 
         bool Validate() noexcept;
 
