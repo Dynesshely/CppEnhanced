@@ -1,10 +1,11 @@
 ﻿#
 # Created by Dynesshely on 2023.02.05.
 # Changed by ChenPi11 on 2023.03.05.
-# Changed by Dynesshely on 2023.04.17
+# Changed by Dynesshely on 2023.04.17.
+# Changed by ChenPi11 on 2023.08.24.
 #
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.6)
 
 project(CppEnhanced)
 
