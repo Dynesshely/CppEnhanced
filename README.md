@@ -1,4 +1,4 @@
-# About CppEnhanced
+# About
 
 Your powerful tool for C++ development.
 
@@ -9,10 +9,13 @@ In future, you will be able to import CppEnhanced from vcpkg and other package m
 
 ## Dependencies
 
-+ CMake. ( Version > 3.6 )
-+ C/C++ build toolchains.
++ CMake ( Version > 3.6 )
++ C/C++ build toolchains
+  - (MSVC is required on Windows platform)
 
 ## Command
+
+Origin way:
 
 ```shell
 mkdir build
@@ -21,10 +24,20 @@ cmake ..
 cmake --build . --config=Release
 ```
 
+or use script,
+
+```shell
+# on gnu/linux or macos
+./build.sh
+
+# or on windows os
+./build.ps1
+```
+
 # Components
 
 - DateTime  
-  DateTime is a C++ time format and operate class
+  DateTime is a C++ time format and operate class (Deported from dotnet core source code)
 
 # Usage
 
@@ -49,6 +62,3 @@ We are using AGPLv3.0 now.
 # More
 
 - [In Wiki] [Add `Developer PowerShell for VS` profile to VSCode terminals](https://github.com/Dynesshely/CppEnhanced/wiki/Add-%60Developer-PowerShell-for-VS%60-info-your-VSCode)
-
-
-
